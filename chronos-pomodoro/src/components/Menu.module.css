@@ -1,0 +1,29 @@
+
+.menu {
+  margin: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}
+
+.menu_link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-over-primary);
+  background-color: var(--primary);
+  transition: all 0.2s ease-in-out;
+  padding: 1rem;
+  border-radius: 0.8rem;
+}
+
+.menu_link:hover {
+  filter: brightness(80%);
+}
+
+.menu_link svg {
+  width: 2.4rem;
+  height: 2.4rem;
+}

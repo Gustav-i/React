@@ -1,3 +1,9 @@
+import Container from "./components/Container"
+import CountDown from "./components/CountDown"
+import DefaultInput from "./components/DefaultInput"
+import Logo from "./components/Logo"
+import Menu from "./components/Menu"
+
 import "./style/global.css"
 import "./style/theme.css"
 
@@ -6,23 +12,48 @@ export default function App()
 {
   return (
     <>
-      <div className="container">
-        <div className="content">
-          <section>LOGO</section>
-        </div>
-      </div>
+      <Container>
+        <Logo />
+      </Container>
+      
+      <Container>
+        <Menu />
+      </Container>
 
-      <div className="container">
-        <div className="content">
-          <section>FORM</section>
-        </div>
-      </div>
+      <Container>
+        <CountDown />
+      </Container>
 
-      <div className="container">
-        <div className="content">
-          <section>FOOTER</section>
-        </div>
-      </div>
+      <Container>
+        <form className="form" action="">
+
+          <div className="form_row">
+            <DefaultInput 
+              id="my_input" 
+              type="text"
+              label_text="Tarefa" 
+              title="Title"
+              placeholder="Digite algo"
+              disabled
+              defaultValue="Disativado"
+            />
+          </div>
+
+          <div className="form_row">
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+
+          <div className="form_row">
+            <p>Ciclos</p>
+            <p>🟢 🔴 🟢 🔴 🟢 🔴 🟢</p>
+          </div>
+
+          <div className="form_row">
+            <button>Enviar</button>
+          </div>
+
+        </form>
+      </Container>
     </>
   )
 }
