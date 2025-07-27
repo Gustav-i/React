@@ -1,0 +1,40 @@
+
+.button {
+  border: none;
+  background-color: var(--primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24rem;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  margin: 3.8rem 0;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.button svg {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.button:hover {
+  filter: brightness(80%);
+}
+
+.button:active {
+  transform: scale(0.950) translateY(2px); /* ligeiro encolhimento + descida */
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); /* sombra menor para simular afundar */
+}
+
+.green {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.red {
+  background-color: var(--error);
+  color: var(--white);
+}
+

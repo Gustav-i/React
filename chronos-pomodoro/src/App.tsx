@@ -1,14 +1,19 @@
+import { PlayCircleIcon } from "lucide-react"
+
+import Button from "./components/Button"
 import Container from "./components/Container"
 import CountDown from "./components/CountDown"
-import DefaultInput from "./components/DefaultInput"
+import Cycles from "./components/Cycles"
+import Input from "./components/Input"
 import Logo from "./components/Logo"
 import Menu from "./components/Menu"
+import Footer from "./components/Footer"
 
 import "./style/global.css"
 import "./style/theme.css"
 
 
-export default function App() 
+export default function App()
 {
   return (
     <>
@@ -28,7 +33,7 @@ export default function App()
         <form className="form" action="">
 
           <div className="form_row">
-            <DefaultInput 
+            <Input 
               id="my_input" 
               type="text"
               label_text="Tarefa" 
@@ -44,15 +49,19 @@ export default function App()
           </div>
 
           <div className="form_row">
-            <p>Ciclos</p>
-            <p>🟢 🔴 🟢 🔴 🟢 🔴 🟢</p>
+            <Cycles />
           </div>
 
           <div className="form_row">
-            <button>Enviar</button>
+            <Button icon={ <PlayCircleIcon />} color="green" />
+            {/* <Button icon={ <StopCircleIcon />} color="red" /> */}
           </div>
 
         </form>
+      </Container>
+
+      <Container>
+        <Footer />
       </Container>
     </>
   )
