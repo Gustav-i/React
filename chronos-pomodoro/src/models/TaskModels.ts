@@ -1,7 +1,7 @@
-import type { TarefaStateModel } from "./TarefaStateModel"
+import type { TaskStateModel } from "./TaskStateModel"
 
 
-export type TarefaModel = 
+export type TaskModel = 
 {
   id: string
   name: string
@@ -9,5 +9,5 @@ export type TarefaModel =
   start_date: number
   complete_date: number | null
   interrupted_date: number | null
-  type: keyof TarefaStateModel["config"]
+  type: keyof TaskStateModel["config"]
 }

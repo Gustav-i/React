@@ -1,12 +1,12 @@
-import type { TarefaModel } from "./TarefaModels"
+import type { TaskModel } from "./TaskModels"
 
 
-export type TarefaStateModel = 
+export type TaskStateModel = 
 {
-  tarefas: TarefaModel[]
+  tasks: TaskModel[]
   seconds_remaining: number
   formatted_seconds_remaining: string
-  active_tarefa: TarefaModel | null
+  active_task: TaskModel | null
   current_cycle: number
   
   config: 

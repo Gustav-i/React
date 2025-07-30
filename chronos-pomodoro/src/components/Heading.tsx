@@ -1,4 +1,3 @@
-import type React from "react"
 import style from "./heading.module.css"
 
 
