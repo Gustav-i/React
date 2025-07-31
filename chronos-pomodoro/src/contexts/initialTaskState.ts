@@ -8,7 +8,8 @@ export const initialTaskState: TaskStateModel =
   formatted_seconds_remaining: '00:00',
   active_task: null,
   current_cycle: 0,
-  config: {
+  config: 
+  {
     work_time: 25,
     short_break_time: 5,
     long_break_time: 15,

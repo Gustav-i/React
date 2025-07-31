@@ -23,10 +23,10 @@
   background-color: var(--warning);
 }
 
-.short_breaktime {
+.short_break_time {
   background-color: var(--primary);
 }
 
-.long_breaktime {
+.long_break_time {
   background-color: var(--info);
-} 
+}
