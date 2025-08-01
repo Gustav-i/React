@@ -1,6 +1,6 @@
 import type { TaskModel } from '../models/TaskModels'
 
-import { PlayCircleIcon } from 'lucide-react'
+import { PlayCircleIcon, StopCircleIcon } from 'lucide-react'
 import { useRef } from 'react'
 import { useTaskContext } from '../contexts/useTaskContext'
 
@@ -29,8 +29,6 @@ export default function Form()
     if (taskNameInput.current === null) return
 
     const taskName = taskNameInput.current.value.trim()
-
-    console.log(taskName)
 
     if (!taskName) 
     {
@@ -65,6 +63,27 @@ export default function Form()
     })
   }
 
+  function handleInterruptTask() 
+  {
+    setState(prevState => 
+    {
+      return {
+        ...prevState,
+        active_task: null,
+        seconds_remaining: 0,
+        formatted_seconds_remaining: "00:00",
+        tasks: prevState.tasks.map(task => 
+        {
+          if (prevState.active_task && prevState.active_task.id === task.id) 
+          {
+            return { ...task, interrupt_date: Date.now() }
+          }
+          return task
+        })
+      }
+    })  
+  }
+
   return (
     <form onSubmit={handleCreateTask} className="form" action="">
 
@@ -75,6 +94,7 @@ export default function Form()
           label_text="task" 
           placeholder="Digite algo"
           ref={taskNameInput}
+          disabled={!!state.active_task}
         />
       </div>
 
@@ -89,8 +109,27 @@ export default function Form()
       }
 
       <div className="form_row">
-        <Button icon={ <PlayCircleIcon />} color="green" />
-        {/* <Button icon={ <StopCircleIcon />} color="red" /> */}
+        {!state.active_task 
+          ? 
+          <Button 
+            icon={<PlayCircleIcon />} 
+            color="green" 
+            aria-label='Iniciar nova tarefa' 
+            title='Iniciar nova tarefa'
+            type='submit'
+            key="submit_btn"
+          />
+          :
+          <Button 
+            icon={<StopCircleIcon />} 
+            color="red" 
+            aria-label='Interromper tarefa' 
+            title='Interromper tarefa'
+            type='button'
+            onClick={handleInterruptTask}
+            key="interrupt_btn"
+          />
+        }
       </div>
 
     </form>

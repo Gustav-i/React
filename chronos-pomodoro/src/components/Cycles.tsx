@@ -42,15 +42,7 @@ export default function Cycles()
             )
           })
         }
-
-        {/* <span className={`${style.cycles_dot} ${style.work_time}`}></span>
-        <span className={`${style.cycles_dot} ${style.short_breaktime}`}></span>
-        <span className={`${style.cycles_dot} ${style.work_time}`}></span>
-        <span className={`${style.cycles_dot} ${style.short_breaktime}`}></span>
-        <span className={`${style.cycles_dot} ${style.work_time}`}></span>
-        <span className={`${style.cycles_dot} ${style.short_breaktime}`}></span>
-        <span className={`${style.cycles_dot} ${style.work_time}`}></span>
-        <span className={`${style.cycles_dot} ${style.long_breaktime}`}></span> */}
+        
       </div>
 
     </div>
